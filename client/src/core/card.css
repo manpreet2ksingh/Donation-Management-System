@@ -1,0 +1,74 @@
+.card {
+    float: left;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 333px;
+    grid-template-rows: 250px 80px 80px 80px;
+    grid-template-areas: "image" "text" "description" "btn";
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    font-family: roboto;
+    text-align: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin:50px;
+  }
+
+  .card-image img{
+    grid-area: image;
+    width: 333px;
+    height:250px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  .card-text {
+    grid-area: text;
+    margin: 20px;
+  }
+  
+  .card-text h2 {
+    margin-top:5px;
+    font-size:28px;
+  }
+
+  .card-desc {
+    grid-area: description;
+    margin: 5px;
+  }
+  
+  .card-desc p {
+    color: grey;
+    font-size:15px;
+    font-weight: 300;
+  }
+
+  .card-btn button{
+    background-color: rgba(199, 195, 195, 0.6);
+    color:black;
+    border:none;
+    border-radius: 10px;
+    cursor: pointer;
+    width:50%;
+    font-size: 15px;
+    margin: 10px 50px 20px;
+    padding:10px;
+  }
+  
+  .card:hover {
+    transform: scale(1.15);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+
+  .next button{
+    background-color: rgba(199, 195, 195, 0.6);
+    color:black;
+    border:none;
+    border-radius: 3px;
+    cursor: pointer;
+    width:200px;
+    font-size: 15px;
+    margin-top:20px;
+    margin-left: 550px;
+    padding:10px;   
+  }

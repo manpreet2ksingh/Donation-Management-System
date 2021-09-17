@@ -1,0 +1,76 @@
+.cardNgo {
+      float: left;
+      overflow: auto;
+      display: grid;
+      grid-template-columns: 333px;
+      grid-template-rows: 80px 100px 40px 40px 80px;
+      grid-template-areas: "text" "description" "email" "pincode" "btn";
+      border-radius: 18px;
+      background: white;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+      font-family: roboto;
+      text-align: center;
+      transition: 0.5s ease;
+      cursor: pointer;
+      margin:50px;
+    }
+  
+    .cardNgo-text {
+      grid-area: text;
+      margin: 20px;
+    }
+    
+    .cardNgo-text h2 {
+      margin-top:5px;
+      font-size:28px;
+    }
+  
+    .cardNgo-desc {
+      grid-area: description;
+      margin: 5px;
+    }
+    
+    .cardNgo-desc p {
+      color: grey;
+      font-size:15px;
+      font-weight: 300;
+    }
+
+    .cardNgo-email{
+        grid:email;
+        color:grey;
+        font-size:15px;
+        font-weight: 300;
+    }
+
+    .cardNgo-pincode{
+        grid:pincode;
+        color:grey;
+        font-size:15px;
+        font-weight: 300;
+    }
+  
+    .cardNgo-btn button{
+      background-color: rgba(199, 195, 195, 0.6);
+      color:black;
+      border:none;
+      border-radius: 10px;
+      cursor: pointer;
+      width:50%;
+      font-size: 15px;
+      margin: 10px 50px 20px;
+      padding:10px;
+    }
+    
+    .cardNgo:hover {
+      transform: scale(1.15);
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+    }
+
+    .header{
+      color:white;
+      text-align: center;
+      font-family: roboto;
+      font-size: 45px;
+    }
+  
