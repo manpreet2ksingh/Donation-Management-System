@@ -15,10 +15,6 @@ const categoryRoutes = require('./routes/category')
 const ngoRoutes = require('./routes/ngo')
 const mailRoutes = require('./routes/mail')
 
-app.get("/",(req,res)=>{
-    res.send("HELLO")
-})
-
 // middleware
 app.use(cors());
 app.use(bodyParser.json());
