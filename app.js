@@ -15,6 +15,21 @@ const categoryRoutes = require('./routes/category')
 const ngoRoutes = require('./routes/ngo')
 const mailRoutes = require('./routes/mail')
 
+const PORT = process.env.PORT || 8000
+
+mongoose.connect(
+    process.env.MONGO_URI,
+    {
+        useNewUrlParser:true,
+        useUnifiedTopology:true}
+    )
+    .then(()=>console.log("DB connected"))
+    .catch(error=>console.log(error))
+
+mongoose.connection.on('connected',()=>{
+    console.log("database connected!!!!")
+})
+
 // middleware
 app.use(cors());
 app.use(bodyParser.json());
@@ -33,21 +48,6 @@ app.use('/api',userRoutes);
 app.use('/api',categoryRoutes);
 app.use('/api',ngoRoutes);
 app.use('/api',mailRoutes);
-
-mongoose.connect(
-    process.env.MONGO_URI,
-    {
-        useNewUrlParser:true,
-        useUnifiedTopology:true}
-    )
-    .then(()=>console.log("DB connected"))
-    .catch(error=>console.log(error))
-
-mongoose.connection.on('connected',()=>{
-    console.log("database connected!!!!")
-})
-
-const PORT = process.env.PORT || 8000
 
 app.listen(PORT,()=>{
     console.log(`Server is up and running on PORT ${PORT}`);
