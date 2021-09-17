@@ -26,7 +26,9 @@
   "devDependencies": {},
   "scripts": {
     "start": "nodemon app.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "build":"cd client && npm start",
+    "install-client":"cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build"
   },
   "author": "Manpreet",
   "license": "ISC"

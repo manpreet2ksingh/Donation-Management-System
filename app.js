@@ -23,9 +23,14 @@ app.get("/",(req,res)=>{
 app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser())
-app.use(morgan('dev'))
 app.use(expressValidator())
 
+if(process.env.NODE_ENV === 'production')
+{
+    app.use(express.static('client/build'))
+}
+
+app.use(morgan('dev'))
 // routes middleware
 app.use('/api',authRoutes);
 app.use('/api',userRoutes);
@@ -41,6 +46,10 @@ mongoose.connect(
     )
     .then(()=>console.log("DB connected"))
     .catch(error=>console.log(error))
+
+mongoose.connection.on('connected',()=>{
+    console.log("database connected!!!!")
+})
 
 const PORT = process.env.PORT || 8000
 
