@@ -1,5 +1,4 @@
 import {API} from '../config'
-
 export const signup = (user)=>{
     return fetch(`${API}/signup`,{
         method:'POST',
