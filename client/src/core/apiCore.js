@@ -1,7 +1,7 @@
 import {API} from '../config'
 
 export const listCategories = () =>{
-    return fetch(`${API}/categories`,{
+    return fetch(`/api/categories`,{
         method:"GET"
     }).then(res=>{
         return res.json()
@@ -13,7 +13,7 @@ export const listCategories = () =>{
 
 export const filteredNgos = (parameters)=>{
     console.log(parameters)
-    return fetch(`${API}/ngos/filtered`,{
+    return fetch(`/api/ngos/filtered`,{
         method:'POST',
         headers:{
             Accept:'application/json',
@@ -28,7 +28,7 @@ export const filteredNgos = (parameters)=>{
 }
 
 export const getNgoName = (id)=>{
-    return fetch(`${API}/ngo/${id}`,{
+    return fetch(`/api/ngo/${id}`,{
         method:"GET"
     }).then(res=>{
         return res.json()
@@ -39,7 +39,7 @@ export const getNgoName = (id)=>{
 }
 
 export const getCategoryName = (id)=>{
-    return fetch(`${API}/category/${id}`,{
+    return fetch(`/api/category/${id}`,{
         method:"GET"
     }).then(res=>{
         return res.json()
@@ -52,7 +52,7 @@ export const getCategoryName = (id)=>{
 
 export const updateHistory = (id,parameters)=>{
     console.log(parameters)
-    return fetch(`${API}/user/${id}/donation`,{
+    return fetch(`/api/user/${id}/donation`,{
         method:'POST',
         headers:{
             Accept:'application/json',
@@ -67,7 +67,7 @@ export const updateHistory = (id,parameters)=>{
 }
 
 export const getUser = (id)=>{
-    return fetch(`${API}/user/${id}`,{
+    return fetch(`/api/user/${id}`,{
         method:"GET"
     }).then(res=>{
         return res.json()
@@ -78,7 +78,7 @@ export const getUser = (id)=>{
 }
 
 export const send = (details)=>{
-    return fetch(`${API}/notification`,{
+    return fetch(`/api/notification`,{
         method:"POST",
         headers:{
             Accept:'application/json',

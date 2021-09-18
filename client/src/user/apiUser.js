@@ -1,7 +1,5 @@
-import {API} from '../config'
-
 export const read = (userId,token) =>{
-    return fetch(`${API}/user/${userId}`,{
+    return fetch(`/api/user/${userId}`,{
         method:'GET',
         headers:{
             Accept:'application/json',
@@ -16,7 +14,7 @@ export const read = (userId,token) =>{
 }
 
 export const update = (userId,token,data) =>(
-    fetch(`${API}/user/${userId}`,{
+    fetch(`/api/user/${userId}`,{
         method:'PUT',
         headers:{
             Accept:'application/json',
@@ -42,19 +40,4 @@ export const updateUser = (user,next)=>{
             next()
         }
     }
-}
-
-export const getPurchaseHistory = (userId,token) =>{
-    return fetch(`${API}/order/by/user/${userId}`,{
-        method:'GET',
-        headers:{
-            Accept:'application/json',
-            'Content-Type':'application/json',
-            Authorization:`Bearer ${token}`
-        }
-    })
-    .then((res)=>{
-        return res.json()
-        })
-    .catch(err=>console.log(err))
 }
