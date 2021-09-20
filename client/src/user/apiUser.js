@@ -1,5 +1,5 @@
 export const read = (userId,token) =>{
-    return fetch(`/api/user/${userId}`,{
+    return fetch(`/user/${userId}`,{
         method:'GET',
         headers:{
             Accept:'application/json',
@@ -14,7 +14,7 @@ export const read = (userId,token) =>{
 }
 
 export const update = (userId,token,data) =>(
-    fetch(`/api/user/${userId}`,{
+    fetch(`/user/${userId}`,{
         method:'PUT',
         headers:{
             Accept:'application/json',

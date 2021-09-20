@@ -1,5 +1,5 @@
 export const signup = (user)=>{
-    return fetch(`/api/signup`,{
+    return fetch(`/signup`,{
         method:'POST',
         headers:{
             Accept:'application/json',
@@ -15,7 +15,7 @@ export const signup = (user)=>{
 
 export const signin = (user)=>{
     
-    return fetch(`/api/signin`,{
+    return fetch(`/signin`,{
         method:'POST',
         headers:{
             Accept:'application/json',
@@ -48,7 +48,7 @@ export const signout = (next)=>{
     {
         localStorage.removeItem('jwt');
         next();
-        fetch(`/api/signout`,{
+        fetch(`/signout`,{
             method:'GET'
         })
         .then(response=>{
