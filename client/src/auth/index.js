@@ -1,5 +1,5 @@
 export const signup = (user)=>{
-    return fetch(`/signup`,{
+    return fetch(`https://donationmanagementsystem.herokuapp.com/signup`,{
         method:'POST',
         headers:{
             Accept:'application/json',
@@ -15,7 +15,7 @@ export const signup = (user)=>{
 
 export const signin = (user)=>{
     
-    return fetch(`/signin`,{
+    return fetch(`https://donationmanagementsystem.herokuapp.com/signin`,{
         method:'POST',
         headers:{
             Accept:'application/json',
@@ -48,7 +48,7 @@ export const signout = (next)=>{
     {
         localStorage.removeItem('jwt');
         next();
-        fetch(`/signout`,{
+        fetch(`https://donationmanagementsystem.herokuapp.com/signout`,{
             method:'GET'
         })
         .then(response=>{

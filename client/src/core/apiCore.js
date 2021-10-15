@@ -1,5 +1,5 @@
 export const listCategories = () =>{
-    return fetch(`/categories`,{
+    return fetch(`https://donationmanagementsystem.herokuapp.com/categories`,{
         method:"GET"
     }).then(res=>{
         return res.json()
@@ -11,7 +11,7 @@ export const listCategories = () =>{
 
 export const filteredNgos = (parameters)=>{
     console.log(parameters)
-    return fetch(`/ngos/filtered`,{
+    return fetch(`https://donationmanagementsystem.herokuapp.com/ngos/filtered`,{
         method:'POST',
         headers:{
             Accept:'application/json',
@@ -26,7 +26,7 @@ export const filteredNgos = (parameters)=>{
 }
 
 export const getNgoName = (id)=>{
-    return fetch(`/ngo/${id}`,{
+    return fetch(`https://donationmanagementsystem.herokuapp.com/ngo/${id}`,{
         method:"GET"
     }).then(res=>{
         return res.json()
@@ -37,7 +37,7 @@ export const getNgoName = (id)=>{
 }
 
 export const getCategoryName = (id)=>{
-    return fetch(`/category/${id}`,{
+    return fetch(`https://donationmanagementsystem.herokuapp.com/category/${id}`,{
         method:"GET"
     }).then(res=>{
         return res.json()
@@ -50,7 +50,7 @@ export const getCategoryName = (id)=>{
 
 export const updateHistory = (id,parameters)=>{
     console.log(parameters)
-    return fetch(`/user/${id}/donation`,{
+    return fetch(`https://donationmanagementsystem.herokuapp.com/user/${id}/donation`,{
         method:'POST',
         headers:{
             Accept:'application/json',
@@ -65,7 +65,7 @@ export const updateHistory = (id,parameters)=>{
 }
 
 export const getUser = (id)=>{
-    return fetch(`/user/${id}`,{
+    return fetch(`https://donationmanagementsystem.herokuapp.com/user/${id}`,{
         method:"GET"
     }).then(res=>{
         return res.json()
@@ -76,7 +76,7 @@ export const getUser = (id)=>{
 }
 
 export const send = (details)=>{
-    return fetch(`/notification`,{
+    return fetch(`https://donationmanagementsystem.herokuapp.com/notification`,{
         method:"POST",
         headers:{
             Accept:'application/json',
