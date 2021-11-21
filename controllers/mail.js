@@ -1,5 +1,5 @@
 const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey('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')
+sgMail.setApiKey(process.env.twillo)
 
 exports.send = (req,res) =>{
 
